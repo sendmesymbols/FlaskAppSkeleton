@@ -19,3 +19,8 @@ Created by [@jelmerdejong](https://twitter.com/jelmerdejong).
 Find all the documentation in this repository in the [docs folder](docs/README.md).
 
 ### [Getting Started](docs/getting-started.md)
+
+Flask Mail
+1. Set up 2-factor auth for your google account - Go to account to setup 2 factor auth.
+2. Create App password - Under security tab.
+3. If you receive less secure app email from gmail, accept it in "view activity" tab.
