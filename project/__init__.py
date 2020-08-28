@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_login import current_user, login_required
 from flask_mail import Mail
-import os
+from config import *
 
 
 # CONFIG
@@ -69,6 +69,9 @@ def page_forbidden(e):
 def page_gone(e):
     return render_template('410.html'), 410
 
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db.session.remove()
 
 if __name__ == '__main__':
     app.run(debug=True)

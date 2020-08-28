@@ -7,10 +7,22 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'add-your-random-key-here'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 't0pSEcRetKEy'
     #SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://localhost/flaskappblueprint'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://root:yaKhudaKhair@localhost/app'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_POOL_SIZE = 20
+    SQLALCHEMY_POOL_TIMEOUT = 300
+    '''
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        "max_overflow": 15,
+        "pool_pre_ping": True,
+        "pool_recycle": 60 * 60,
+        "pool_size": 30,
+    }
+    '''
+
+
     BCRYPT_LOG_ROUNDS = 15
     '''
     MAIL_SERVER = 'smtp.mandrillapp.com'
@@ -34,6 +46,7 @@ class Config(object):
 
 class ProductionConfig(Config):
     DEBUG = False
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://sendmesymbol:yaKhudaKhair@sendmesymbol.mysql.pythonanywhere-services.com/sendmesymbol$app'
 
 
 class StagingConfig(Config):
