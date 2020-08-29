@@ -72,11 +72,11 @@
 <body style="background: #e9ecef;">
 <div class="col-lg-12">
     {% for primary_message in get_flashed_messages(category_filter=["primary"]) %}
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <script>
+     <script>
         show_toaster("info", "Info", "{{ primary_message }}")
     </script>
 
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
         {{ primary_message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
