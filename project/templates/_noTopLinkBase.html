@@ -115,10 +115,6 @@
 
 
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <script>
-        show_toaster("warning", "Warning", "{{ danger_message }}")
-    </script>
-
         {{ danger_message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -126,10 +122,10 @@
     </div>
     {% endfor %}
     {% for warning_message in get_flashed_messages(category_filter=["warning"]) %}
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-         <script>
+    <script>
         show_toaster("warning", "Warning", "{{ warning_message }}")
     </script>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
 
         {{ warning_message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
