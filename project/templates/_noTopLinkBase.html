@@ -69,82 +69,46 @@
 
 
 </head>
-<body style="background: #e9ecef;">
-<div class="col-lg-12">
-    {% for primary_message in get_flashed_messages(category_filter=["primary"]) %}
-     <script>
-        show_toaster("info", "Info", "{{ primary_message }}")
-    </script>
+<body class="{% block body_class %}{% endblock %}">
+{% for primary_message in get_flashed_messages(category_filter=["primary"]) %}
+<script>
+    show_toaster("info", "Info", "{{ primary_message }}")
+</script>
+{% endfor %}
 
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        {{ primary_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% for secondary_message in get_flashed_messages(category_filter=["secondary"]) %}
-    <script>
-        show_toaster("info", "Info", "{{ secondary_message }}")
-    </script>
+{% for secondary_message in get_flashed_messages(category_filter=["secondary"]) %}
+<script>
+    show_toaster("info", "Info", "{{ secondary_message }}")
+</script>
+{% endfor %}
 
-    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
-        {{ secondary_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% for success_message in get_flashed_messages(category_filter=["success"]) %}
-    <script>
-        show_toaster("success", "Success", "{{ success_message }}")
-    </script>
+{% for success_message in get_flashed_messages(category_filter=["success"]) %}
+<script>
+    show_toaster("success", "Success", "{{ success_message }}")
+</script>
+{% endfor %}
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ success_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% for danger_message in get_flashed_messages(category_filter=["danger"]) %}
+{% for danger_message in get_flashed_messages(category_filter=["danger"]) %}
 
-    <script>
-        show_toaster("error", "Error", "{{ danger_message }}")
-    </script>
+<script>
+    show_toaster("error", "Error", "{{ danger_message }}")
+</script>
 
 
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ danger_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% for warning_message in get_flashed_messages(category_filter=["warning"]) %}
-    <script>
-        show_toaster("warning", "Warning", "{{ warning_message }}")
-    </script>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+{% endfor %}
+{% for warning_message in get_flashed_messages(category_filter=["warning"]) %}
+<script>
+    show_toaster("warning", "Warning", "{{ warning_message }}")
+</script>
 
-        {{ warning_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% for info_message in get_flashed_messages(category_filter=["info"]) %}
-     <script>
-        show_toaster("info", "Info", "{{ info_message }}")
-    </script>
+{% endfor %}
 
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {{ info_message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
+{% for info_message in get_flashed_messages(category_filter=["info"]) %}
+<script>
+    show_toaster("info", "Info", "{{ info_message }}")
+</script>
+
+{% endfor %}
 </div>
 
 

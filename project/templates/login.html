@@ -1,7 +1,7 @@
 {% extends "_noTopLinkBase.html" %}
 {% block title %}Login Page{% endblock %}
 {% from "_formshelper.html" import render_field %}
-
+{% block body_class %}hold-transition login-page{% endblock %}
 {% block content %}
 <!--
 <div class="row">
@@ -29,8 +29,7 @@
 </div>
 
 -->
-<div class="row">
-  <div class="col-lg-12">
+
 <div class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
@@ -60,15 +59,15 @@
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
-                                <!--
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                  Remember Me
-                                </label>
-                                Removed because right now we dont have the functionality to implement remember me.
-                                -->
-                            </div>
+                            <!-- <div class="icheck-primary">
+                                 -
+                                 <input type="checkbox" id="remember">
+                                 <label for="remember">
+                                   Remember Me
+                                 </label>
+                                 Removed because right now we dont have the functionality to implement remember me.
+
+                             </div>-->
                         </div>
                         <!-- /.col -->
                         <div class="col-12">
@@ -80,21 +79,18 @@
 
                 <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
-                    <a href="/reset" class="btn btn-block btn-primary">
-
+                    <a href="{{ url_for('users.reset') }}" class="btn btn-block btn-primary">
                         <i class="fas fa-key mr-2"></i> Forgot Password
                     </a>
                     <a href="{{ url_for('users.register') }}" class="btn btn-block btn-danger">
                         <i class="fas fa-user mr-2"></i> New User
                     </a>
                 </div>
-
+                <!-- /.social-auth-links -->
             </div>
             <!-- /.login-card-body -->
         </div>
     </div>
-</div>
-  </div>
 </div>
 <!-- /.login-box -->
 
