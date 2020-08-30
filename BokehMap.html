@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.0.min.js" integrity="sha384-jtq3UzIrk2TfDZfSNGEN0ICKrRWmtzZSQm6i1Xnd3hY3UfU9m98vuEL7JUv7Iway" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.0.min.js" integrity="sha384-rRlSZb4FImflqQNhKcvkZq8b+FqcNFxP9CmCO8Vgo9uNXe6wk6yNMlKMrXn+TjeM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="1c52f69b-baea-4c93-a119-65f530da35b1" data-root-id="1088"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1159">
+          {"ce46cd6c-1896-4d97-90b5-0bf06fa5a9ee":{"roots":{"references":[{"attributes":{},"id":"1082","type":"Selection"},{"attributes":{"end":5783109.805600002,"start":3837160.429399997},"id":"1004","type":"Range1d"},{"attributes":{},"id":"1051","type":"BasicTicker"},{"attributes":{"callback":null,"tooltips":[["Name","@name"],["Elevation","@elevation (m)"]]},"id":"1058","type":"HoverTool"},{"attributes":{"data_source":{"id":"1069"},"glyph":{"id":"1071"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1072"},"selection_glyph":null,"view":{"id":"1074"}},"id":"1073","type":"GlyphRenderer"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"}]},"id":"1062","type":"Toolbar"},{"attributes":{"toolbars":[{"id":"1062"}],"tools":[{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"}]},"id":"1085","type":"ProxyToolbar"},{"attributes":{},"id":"1046","type":"LinearScale"},{"attributes":{"axis":{"id":"1050"},"ticker":null},"id":"1053","type":"Grid"},{"attributes":{},"id":"1061","type":"ResetTool"},{"attributes":{"data":{"elevation":[1691,1908,1798,1691,1935,1967,1729,2055,2175,1794,1660,2027,1973,1955,1609,1538,2298,1714,1804,2220,2765,1877,1685,1678,1567,2062,1555,1692,1529,2341,2138,1621,1631,1755,2038,2014,1996,2384,2014,1966,1886,1632,1655,1706,1757,2041,1867,1884,2026,1911],"index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49],"name":["CHINLE MUNICIPAL AIRPORT","ELY AIRPORT /YELLAND FIELD/ AIRPORT","TRUCKEE-TAHOE AIRPORT","GARFIELD COUNTY REGIONAL AIRPORT","SANTA FE MUNICIPAL AIRPORT","BLACK ROCK AIRPORT","ROCKY MOUNTAIN METROPOLITAN AIRPORT","WINDOW ROCK AIRPORT","MAMMOTH YOSEMITE AIRPORT","CENTENNIAL AIRPORT","GRANT COUNTY AIRPORT","YELLOWSTONE AIRPORT","GALLUP MUNICIPAL AIRPORT","SHOW LOW REGIONAL AIRPORT","VERNAL REGIONAL AIRPORT","ERNEST A. LOVE FIELD AIRPORT","SAN LUIS VALLEY REGIONAL/BERGMAN FIELD","CEDAR CITY REGIONAL AIRPORT","CORTEZ MUNICIPAL AIRPORT","LARAMIE REGIONAL AIRPORT","TELLURIDE REGIONAL AIRPORT","CHEYENNE REGIONAL/JERRY OLSON FIELD AIRPORT","RIVERTON REGIONAL AIRPORT","FOUR CORNERS REGIONAL AIRPORT","ELKO REGIONAL AIRPORT","ROCK SPRINGS-SWEETWATER COUNTY AIRPORT","YELLOWSTONE REGIONAL AIRPORT","BERT MOONEY AIRPORT","FORT COLLINS-LOVELAND MUNICIPAL AIRPORT","GUNNISON-CRESTED BUTTE REGIONAL AIRPORT","FLAGSTAFF PULLIAM AIRPORT","FRIEDMAN MEMORIAL AIRPORT","CASPER/NATRONA COUNTY INTERNATIONAL AIRPORT","MONTROSE REGIONAL AIRPORT","DURANGO-LA PLATA COUNTY AIRPORT","YAMPA VALLEY AIRPORT","EAGLE COUNTY REGIONAL AIRPORT","ASPEN-PITKIN COUNTY/SARDY FIELD","GRAND CANYON NATIONAL PARK AIRPORT","JACKSON HOLE AIRPORT","CITY OF COLORADO SPRINGS MUNICIPAL AIRPORT","ALBUQUERQUE INTERNATIONAL SUNPORT AIRPORT","DENVER INTERNATIONAL AIRPORT","BUCKLEY AIR FORCE BASE","CHAMBERLAIN US FOREST SERVICE AIRPORT","CROWNPOINT AIRPORT","WHISKEY CREEK AIRPORT","FRANCIS E WARREN AIR FORCE BASE","ANIMAS AIR PARK","LAKE TAHOE AIRPORT"],"x":{"__ndarray__":"8KfGBf9DZ8FkzF2TQWJowaYKRl82gmnBUiegkYXfZsFuNICRg4Zmwdqs+qZmGWfBYHZPEKtRZsF0RpTGYShnwUA1XqSBO2nBz/dTaxtDZsEooIk23fZmwewvu9/Sl2fBZ0RpT0QZZ8E0gLfaYVtnwWB2T4ZvQGfBXCBBu5feZ8FmiGNjZnpmwYJzRj6DA2jBVFInfIAQZ8EFNBHm/G9mwUcDeKFj6WbB+8vuC/9AZsF88rDIWwdnweauJcjc+mbBXCBBDeKVaMG2Yn87QyhnwXyDL1IDJmfBliGOKdPiZ8GOl24O6ktmwaOSOkdetGbBk6mCgc61Z8HOGVFYj0RowUrqBJblmmbBBvAWhp3oZsGCc0bW+uBmwd0kBgPXw2bBeAskbnCzZsECvAVm4bBmwS/dJPrFz2fBUpYhviyDZ8Gt+lypCDtmwSqpEybEombB1sVtmIg5ZsGA2T0R0T1mwZLLf9yLdWjBfvs6UlL5ZsFj7lq4sPlmwfVKWSgYRGbB4L4O+EDnZsHAWyB/X3ppwQ==","dtype":"float64","order":"little","shape":[50]},"y":{"__ndarray__":"KFMFS7x2UEEYfGHiBC1SQZDC9cTgL1JBkOTyz+dMUkGYu5bQfzRQQQAZc4+u2k9BYFRSw/aCUkHojCh1LDlQQUDxYzRdRFFB4HGKzhRTUkFAlPY2/FlNQXCBBFn9QVVBkA96plMmUEHgNhowfAJPQfDSTeKrzlJBINJvBw5pT0HowDnPbypRQQijkgLtTlFBQD7oaWQYUUHwDb7Y60tTQYhjXeS3cVFB4MeYY081U0GI9NuLBk1UQdCI0l7ny1BB8FpCyq0FU0Ew3SQW2XRTQWg7399OKFVBUPOOc80FVkFoRGnbOtBSQQCze84GwlFBYF3cRtrpT0GY9gZPqo5UQQCze77ONVRBMHct1au+UUEATYTZtQNRQZi7liBs1FJBCMWPEVVdUkF4JJc7RiJSQQCaCBNtYVBBYO5a8jKeVEH4D+k/4edRQbCUZVhAz09BOHDOtEh8UkFANV4miGZSQajfvpI9rFVBEJwzOvRBUEGgLENEZ3pNQUCC4h8MMlNBuPP9TMIKUUGgtDekLPRRQQ==","dtype":"float64","order":"little","shape":[50]}},"selected":{"id":"1082"},"selection_policy":{"id":"1081"}},"id":"1069","type":"ColumnDataSource"},{"attributes":{},"id":"1080","type":"BasicTickFormatter"},{"attributes":{"formatter":{"id":"1078"},"ticker":{"id":"1055"},"visible":false},"id":"1054","type":"LinearAxis"},{"attributes":{},"id":"1060","type":"PanTool"},{"attributes":{},"id":"1059","type":"WheelZoomTool"},{"attributes":{"tile_source":{"id":"1001"}},"id":"1067","type":"TileRenderer"},{"attributes":{"attribution":"\n    Map tiles by &lt;a href=\"http://stamen.com\"&gt;Stamen Design&lt;/a&gt;, under\n    &lt;a href=\"http://creativecommons.org/licenses/by/3.0\"&gt;CC BY 3.0&lt;/a&gt;.\n    Data by &lt;a href=\"http://openstreetmap.org\"&gt;OpenStreetMap&lt;/a&gt;,\n    under &lt;a href=\"http://www.openstreetmap.org/copyright\"&gt;ODbL&lt;/a&gt;.\n    ","url":"http://tile.stamen.com/terrain/{Z}/{X}/{Y}.png"},"id":"1001","type":"WMTSTileSource"},{"attributes":{"text":"US Airports: Field Elevation &gt; 1500m"},"id":"1042","type":"Title"},{"attributes":{"formatter":{"id":"1080"},"ticker":{"id":"1051"},"visible":false},"id":"1050","type":"LinearAxis"},{"attributes":{"toolbar":{"id":"1085"}},"id":"1086","type":"ToolbarBox"},{"attributes":{"below":[{"id":"1050"}],"center":[{"id":"1053"},{"id":"1057"}],"left":[{"id":"1054"}],"plot_height":400,"plot_width":400,"renderers":[{"id":"1067"},{"id":"1073"}],"title":{"id":"1042"},"toolbar":{"id":"1062"},"toolbar_location":null,"x_range":{"id":"1003"},"x_scale":{"id":"1046"},"y_range":{"id":"1004"},"y_scale":{"id":"1048"}},"id":"1041","subtype":"Figure","type":"Plot"},{"attributes":{"children":[{"id":"1084"},{"id":"1086"}]},"id":"1087","type":"Row"},{"attributes":{},"id":"1048","type":"LinearScale"},{"attributes":{"children":[{"id":"1075"},{"id":"1087"}]},"id":"1088","type":"Column"},{"attributes":{"text":"\n&lt;p&gt;This example shows the same data on two separate tile plots. The left plot\nis using a built-in CartoDB tile source, and is using  a customized tile source\nconfigured for OpenStreetMap.&lt;/p&gt;\n","width":800},"id":"1075","type":"Div"},{"attributes":{"fill_color":{"value":"#F46B42"},"line_color":{"value":"white"},"line_width":{"value":2},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1071","type":"Circle"},{"attributes":{},"id":"1078","type":"BasicTickFormatter"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#F46B42"},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"line_width":{"value":2},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1072","type":"Circle"},{"attributes":{},"id":"1055","type":"BasicTicker"},{"attributes":{"source":{"id":"1069"}},"id":"1074","type":"CDSView"},{"attributes":{},"id":"1081","type":"UnionRenderers"},{"attributes":{"children":[[{"id":"1041"},0,0]]},"id":"1084","type":"GridBox"},{"attributes":{"end":-11642164.7634,"start":-13383874.9773},"id":"1003","type":"Range1d"},{"attributes":{"axis":{"id":"1054"},"dimension":1,"ticker":null},"id":"1057","type":"Grid"}],"root_ids":["1088"]},"title":"Bokeh Application","version":"2.2.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1159').textContent;
+                  var render_items = [{"docid":"ce46cd6c-1896-4d97-90b5-0bf06fa5a9ee","root_ids":["1088"],"roots":{"1088":"1c52f69b-baea-4c93-a119-65f530da35b1"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

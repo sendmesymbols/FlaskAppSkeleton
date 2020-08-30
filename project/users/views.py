@@ -122,6 +122,13 @@ def user_profile():
     return render_template('user_profile.html')
 
 
+@users_blueprint.route('/user_profile2', methods=['GET', 'POST'])
+@login_required
+def user_profile2():
+    return render_template('user_profile2.html')
+
+
+
 @users_blueprint.route('/confirm/<token>')
 def confirm_email(token):
     try:
