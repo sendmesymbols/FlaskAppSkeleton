@@ -1,0 +1,100 @@
+{% extends "_mainBase.html" %}
+{% from "_formshelper.html" import render_field %}
+{% block title %}All Tasks{% endblock %}
+{% block body_class %}hold-transition sidebar-mini layout-fixed{% endblock %}
+{% block content %}
+<div class="wrapper">
+{% if tasks[0] == NULL %}
+<div class="panel-body">
+  <p>No Tasks are added yet, <a href="{{ url_for('tasks.add_task') }}">add a new task</a>.</p>
+</div>
+{% else %}
+
+
+<!-- TO DO List -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="ion ion-clipboard mr-1"></i>
+                  To Do List
+                </h3>
+
+                <div class="card-tools">
+                  <ul class="pagination pagination-sm">
+                    <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <ul class="todo-list" data-widget="todo-list">
+                    {% for task in tasks %}
+                  <li>
+                    <!-- drag handle -->
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- checkbox -->
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="finished">
+                      <label for="todoCheck1"></label>
+                    </div>
+                    <!-- todo text -->
+                    <span class="text">{{ task.task_name }}</span>
+                    <!-- Emphasis label -->
+                    <small class="badge badge-danger"><i class="far fa-clock"></i>{{ task.description }}</small>
+                    <!-- General tools such as edit or delete-->
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                    {% endfor %}
+
+
+
+                </ul>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
+              </div>
+            </div>
+            <!-- /.card -->
+
+
+<table class="table table-stripe">
+  <thead>
+    <tr>
+      <th class="border-top-0">Description</th>
+      <th class="border-top-0">Finished</th>
+      <th class="border-top-0"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for task in tasks %}
+    <tr>
+
+      <td>{{ task.task_name }}</td>
+      <td>
+        {{ task.description }}
+      </td>
+      <td>
+        {{ task.finished }}
+      </td>
+      <td>
+        Removed for now
+
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{% endblock %}

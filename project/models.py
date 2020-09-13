@@ -85,3 +85,23 @@ class Items(db.Model):
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
+
+
+class Tasks(db.Model):
+    __tablename__ = 'tasks'
+    id = db.Column(db.Integer, primary_key=True)
+    task_name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(500), nullable=True)
+    finished = db.Column(db.Boolean, nullable=True)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    def __init__(self, task_name, description, finished, user_id):
+        self.task_name = task_name
+        self.description = description
+        self.finished = finished
+        self.user_id = user_id
+
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)

@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+{% block title %}Add Task{% endblock %}
+{% from "_formshelper.html" import render_field %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    <form action="{{ url_for('tasks.add_task') }}" method="post" name="tasksform">
+        {{ form.csrf_token }}
+        <div class="form-group">
+          {{ form.task_name.label }}
+          {{ render_field(form.task_name, class="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.description.label }}
+          {{ render_field(form.description, class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.finished.label }}
+          {{ render_field(form.finished, class="form-control") }}
+        </div>
+
+        <input type="submit" value="Add Task" class="btn btn-lg btn-success">
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h4>On adding tasks</h4>
+    <p>If you need hep, provide it here.</p>
+  </div>
+</div>
+
+{% endblock %}

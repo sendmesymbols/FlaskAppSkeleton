@@ -39,9 +39,11 @@ def load_user(user_id):
 # BLUEPRINTS
 from project.users.views import users_blueprint
 from project.items.views import items_blueprint
+from project.tasks.views import tasks_blueprint
 
 app.register_blueprint(users_blueprint)
 app.register_blueprint(items_blueprint)
+app.register_blueprint(tasks_blueprint)
 
 
 # ROUTES
